@@ -1,0 +1,18 @@
+Project: Friday AI Voice Assistant
+
+Name: Friday
+
+Purpose:
+A personal AI voice assistant.
+
+Features:
+1. Voice Commands
+2. Speech Recognition
+3. Text to Speech
+4. Answer Questions
+5. Internet Search
+6. Personal Assistance
+
+Status: In Development
+
+Created by: Imran
