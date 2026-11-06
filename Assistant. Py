@@ -1,0 +1,1 @@
+ import datetime import webbrowser def wish_me(): hour = datetime.datetime.now().hour if hour < 12: print("Good Morning!") elif hour < 18: print("Good Afternoon!") else: print("Good Evening!") print("Hello! I am Friday, your personal AI assistant.")
