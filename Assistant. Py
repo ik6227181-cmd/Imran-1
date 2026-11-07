@@ -1,1 +1,60 @@
- import datetime import webbrowser def wish_me(): hour = datetime.datetime.now().hour if hour < 12: print("Good Morning!") elif hour < 18: print("Good Afternoon!") else: print("Good Evening!") print("Hello! I am Friday, your personal AI assistant.")
+import datetime
+import webbrowser
+from urllib.parse import quote_plus
+
+
+def wish_me():
+    hour = datetime.datetime.now().hour
+
+    if hour < 12:
+        print("Good Morning!")
+    elif hour < 18:
+        print("Good Afternoon!")
+    else:
+        print("Good Evening!")
+
+
+def assistant():
+    wish_me()
+    print("Hello! I am Friday, your personal AI assistant.")
+    print("How can I help you today?")
+
+    while True:
+        command = input("You: ").strip().lower()
+
+        if command == "hello":
+            print("Friday: Hello! How are you?")
+
+        elif command == "time":
+            now = datetime.datetime.now()
+            print("Friday:", now.strftime("%I:%M %p"))
+
+        elif command == "date":
+            today = datetime.date.today()
+            print("Friday:", today)
+
+        elif command == "google":
+            webbrowser.open("https://www.google.com")
+
+        elif command == "youtube":
+            webbrowser.open("https://www.youtube.com")
+
+        elif command.startswith("search "):
+            query = command.replace("search ", "", 1)
+            webbrowser.open(
+                "https://www.google.com/search?q=" + quote_plus(query)
+            )
+
+        elif command == "who are you":
+            print("I am Friday, your personal AI assistant!")
+
+        elif command == "exit":
+            print("Friday: Goodbye! See you soon.")
+            break
+
+        else:
+            print("Friday: Sorry, I don't understand.")
+
+
+if __name__ == "__main__":
+    assistant()
